@@ -1,27 +1,35 @@
 import { GoogleLogin } from "react-google-login";
+import { auth } from "../googledatebase/config";
+import { GoogleAuthProvider } from "firebase/auth";
+import { useState } from "react";
 
-const clientId = "14744009432-sho7uojc68bh2vltlv820e3in76d9843.apps.googleusercontent.com";
+const clientId = "14744009432-b7jqrtdpqiqshgpa345fgr1os5ej7n1l.apps.googleusercontent.com";
 
-function Login() {
+function Login({ onClick, isLoading }) {
+    
+
     const onSuccess = (res) => {
         console.log("LOGIN SUCCESS Current user: ", res.profileObj);
-    }
+    };
     const onFailure = (res) => {
         console.log("LOGIN FAILED res: ", res);
-    }
+    };
 
-    return(
-        <div id="signInButton">
-            <GoogleLogin
-                clientId={clientId}
-                buttonText="Login"
-                onSuccess={onSuccess}
-                onFailure={onFailure}
-                cookiePolicy={'single_host_origin'}
-                isSignedIn={true}
-            />
-        </div>
-    )
+    const renderButton = (props) => (
+        <button
+            onClick={props.onClick}
+            disabled={props.disabled}
+            className="custom-login-button"
+        >
+            Sign in with Google
+        </button>
+    );
+
+    return (
+        <button onClick={onClick} disabled={isLoading} className="custom-login-button">
+          {isLoading ? <div className="spinner"></div> : "Sign in with Google"}
+        </button>
+      );
 }
 
 export default Login;

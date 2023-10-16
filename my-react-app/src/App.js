@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import Chat from "./components/pages/chat"
-import Lists from "./components/pages/lists"
+import Chat from "./components/pages/chat";
+import Lists from "./components/pages/lists";
+import Signin from './components/pages/signin';
 import Home from './components/pages/home';
 import { Route, Routes } from "react-router-dom";
 import LoginButton from './components/Loginbutton';
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/chat' element={<Chat />} />
+          <Route path='/signin' element={<Signin />} />
           <Route path='/lists' element={<Lists />} />
         </Routes>
       </div>
