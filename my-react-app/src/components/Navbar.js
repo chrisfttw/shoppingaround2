@@ -9,6 +9,7 @@ export default function Navbar() {
             <ul>
                 <CustomLink to="/chat">Chat</CustomLink>
                 <CustomLink to="/lists">Lists</CustomLink>
+                <CustomLink to="/signin">Add a Store</CustomLink>
                 <CustomLink to="/signin">Sign in</CustomLink>
             </ul>
         </nav>
