@@ -1,24 +1,15 @@
-import { useMemo } from "react";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import "../../styles.css";
+import "leaflet/dist/leaflet.css";
 
-export default function Home() {
-    const { isLoaded } = useLoadScript({
-        googleMapsApiKey: "AIzaSyCW7EhKHiCxb8kfaK4xNWxNlIiXZZimazg"
-    });
+import { MapContainer, TileLayer } from "react-leaflet";
 
-
-    if(!isLoaded) return <div>Loading....</div>;
-    return <Map />;
-}
-
-function Map() {
-    const center = useMemo(() => ({lat: 34.049279, lng: -118.242343}), [])
-
+export default function App() {
     return (
-        <GoogleMap 
-            zoom={11} 
-            center={center} 
-            mapContainerClassName="map-container"
-        ></GoogleMap>
+        <MapContainer center={[37.7749, -122.4194]} zoom={13}>
+            <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+        </MapContainer>
     );
 }

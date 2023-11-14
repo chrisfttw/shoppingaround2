@@ -1,0 +1,45 @@
+Date : 2023-11-06 12:27:13
+Directory : c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src
+Total : 15 files,  906 codes, 6 comments, 71 blanks, all 983 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| CSS        |          2 |        572 |          4 |         25 |        601 |
+| JavaScript |         13 |        334 |          2 |         46 |        382 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                           | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                              |         15 |        906 |          6 |         71 |        983 |
+| . (Files)                                                                                      |          4 |        613 |          4 |         30 |        647 |
+| components                                                                                     |         10 |        276 |          1 |         38 |        315 |
+| components (Files)                                                                             |          5 |        116 |          1 |         21 |        138 |
+| components\pages                                                                               |          5 |        160 |          0 |         17 |        177 |
+| googledatebase                                                                                 |          1 |         17 |          1 |          3 |         21 |
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                       | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\App.css                       | CSS        |        421 |          4 |          3 |        428 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\App.js                        | JavaScript |         28 |          0 |          2 |         30 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\Loginbutton.js     | JavaScript |         28 |          0 |          7 |         35 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\Logoutbutton.js    | JavaScript |         17 |          0 |          4 |         21 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\Map.js             | JavaScript |         26 |          1 |          4 |         31 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\Navbar.js          | JavaScript |         26 |          0 |          1 |         27 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\Searchbar.js       | JavaScript |         19 |          0 |          5 |         24 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\pages\addastore.js | JavaScript |          3 |          0 |          0 |          3 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\pages\chat.js      | JavaScript |         96 |          0 |          8 |        104 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\pages\home.js      | JavaScript |         19 |          0 |          5 |         24 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\pages\lists.js     | JavaScript |          3 |          0 |          0 |          3 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\pages\signin.js    | JavaScript |         39 |          0 |          4 |         43 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\googledatebase\config.js      | JavaScript |         17 |          1 |          3 |         21 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\index.js                      | JavaScript |         13 |          0 |          3 |         16 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\styles.css                    | CSS        |        151 |          0 |         22 |        173 |
+| Total                                                                                          |            |        906 |          6 |         71 |        983 |
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

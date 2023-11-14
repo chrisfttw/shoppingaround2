@@ -1,0 +1,36 @@
+Date : 2023-11-06 12:27:40
+Directory : c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components
+Total : 10 files,  276 codes, 1 comments, 38 blanks, all 315 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         10 |        276 |          1 |         38 |        315 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                           | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                              |         10 |        276 |          1 |         38 |        315 |
+| . (Files)                                                                                      |          5 |        116 |          1 |         21 |        138 |
+| pages                                                                                          |          5 |        160 |          0 |         17 |        177 |
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                       | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\Loginbutton.js     | JavaScript |         28 |          0 |          7 |         35 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\Logoutbutton.js    | JavaScript |         17 |          0 |          4 |         21 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\Map.js             | JavaScript |         26 |          1 |          4 |         31 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\Navbar.js          | JavaScript |         26 |          0 |          1 |         27 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\Searchbar.js       | JavaScript |         19 |          0 |          5 |         24 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\pages\addastore.js | JavaScript |          3 |          0 |          0 |          3 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\pages\chat.js      | JavaScript |         96 |          0 |          8 |        104 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\pages\home.js      | JavaScript |         19 |          0 |          5 |         24 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\pages\lists.js     | JavaScript |          3 |          0 |          0 |          3 |
+| c:\Users\19513\Documents\GitHub\shoppingaround2\my-react-app\src\components\pages\signin.js    | JavaScript |         39 |          0 |          4 |         43 |
+| Total                                                                                          |            |        276 |          1 |         38 |        315 |
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

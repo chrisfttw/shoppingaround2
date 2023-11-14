@@ -18,7 +18,7 @@ class MapContainer extends Component {
             lat: 37.7749, // Replace with your desired initial latitude
             lng: -122.4194, // Replace with your desired initial longitude
           }}
-          zoom={14} // Adjust the zoom level as needed
+          zoom={20} // Adjust the zoom level as needed
         />
       </div>
     );
