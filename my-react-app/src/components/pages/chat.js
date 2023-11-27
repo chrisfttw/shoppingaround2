@@ -1,104 +1,38 @@
-import { useState, useEffect } from "react";
-import { ref, push, onValue } from "firebase/database";
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
-import { auth, database } from "../../googledatebase/config";
+// import React from "react";
 
-export default function Chat() {
-  const [user, setUser] = useState(null);
-  const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+// const Chat = ({thread}) => {
+//     return (
+//         <div className="forumData">
+//             <div className="flex">
+//                 <div className="forumLatest">
+//                     <a href="threadPage" className="postFull">
+//                         <h1 className="threadTitle">Thread Title</h1>
+//                         {/* <a href="threadPage" className="threadTile">Thread</a> */}
+//                     </a>
+//                     <a href="threadPage" className="postFull">
+//                         <h1 className="threadTitle">Thread Title</h1>
+//                         {/* <a href="threadPage" className="threadTile">Thread</a> */}
+//                     </a>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
 
-  useEffect(() => {
-    const messagesRef = ref(database, "messages");
-    onValue(messagesRef, (snapshot) => {
-      const messages = snapshot.val();
-      if (messages) {
-        setMessages(Object.values(messages));
-      }
-    });
-  }, []);
+// export default Chat;
 
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      setUser(user);
-    } else {
-      setUser(null);
-    }
-  });
+import React from 'react'
+import Threads from '../Threads'
+import Chatbox from '../Chatbox'
 
-  const handleNewMessageChange = (event) => {
-    setNewMessage(event.target.value);
-  };
-
-  const handleSendMessage = () => {
-    const user = auth.currentUser;
-    if (user && newMessage) {
-      const message = {
-        id: new Date().getTime(),
-        text: newMessage,
-        user: {
-          uid: user.uid,
-          displayName: user.displayName,
-        },
-      };
-      push(ref(database, "messages"), message);
-      setNewMessage("");
-    }
-  };
-
-  const handleGoogleSignIn = async () => {
-    setIsLoading(true);
-    const auth = getAuth();
-    const provider = new GoogleAuthProvider();
-    try {
-      const result = await signInWithPopup(auth, provider);
-      console.log("LOGIN SUCCESS Current user: ", result.user);
-    } catch (error) {
-      console.log("LOGIN FAILED res: ", error);
-    }
-    setIsLoading(false);
-  };
-
-  const handleSignOut = async () => {
-    try {
-      await signOut(auth);
-      console.log("SIGN OUT SUCCESS");
-    } catch (error) {
-      console.log("SIGN OUT FAILED", error);
-    }
-  };
-
+const chat = () => {
   return (
-    <div className="forum-container">
-      {user ? (
-        <div className="chat-container">
-          <div className="messages-container">
-            {messages.map((message) => (
-              <div key={message.id} className="message">
-                <p>{message.text}</p>
-                <p className="user">{message.user.displayName}</p>
-              </div>
-            ))}
-          </div>
-          <div className="new-message-container">
-            <input
-              type="text"
-              placeholder="Type your message here"
-              value={newMessage}
-              onChange={handleNewMessageChange}
-            />
-            <button onClick={handleSendMessage}>Send</button>
-          </div>
-          <button onClick={handleSignOut}>Sign out</button>
+    <div className="chatHome">
+        <div className="container">
+            <Threads/>
         </div>
-      ) : (
-        <div className="signin-container">
-          <button onClick={handleGoogleSignIn} disabled={isLoading}>
-            {isLoading ? "Signing in..." : "Sign in with Google"}
-          </button>
-        </div>
-      )}
     </div>
-  );
+  )
 }
+
+export default chat

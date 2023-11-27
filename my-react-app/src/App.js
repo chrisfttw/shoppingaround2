@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import "./styles.scss";
 import Navbar from './components/Navbar';
 import Chat from "./components/pages/chat";
 import Lists from "./components/pages/lists";
@@ -9,6 +10,7 @@ import Home from './components/pages/home';
 import { Route, Routes } from "react-router-dom";
 import LoginButton from './components/Loginbutton';
 import LogoutButton from './components/Logoutbutton';
+import Login from './components/pages/login';
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/chat' element={<Chat />} />
           <Route path='/addastore' element={<Addastore />} />
-          <Route path='/signin' element={<Signin />} />
+          <Route path='/signin' element={<Login />} />
           <Route path='/lists' element={<Lists />} />
         </Routes>
       </div>
