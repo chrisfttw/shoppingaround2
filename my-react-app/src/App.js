@@ -21,7 +21,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/chat' element={<Chat />} />
           <Route path='/addastore' element={<Addastore />} />
-          <Route path='/signin' element={<Login />} />
+          <Route path='/signin' element={<Signin />} />
           <Route path='/lists' element={<Lists />} />
         </Routes>
       </div>
