@@ -51,75 +51,157 @@
     }
 }
 
-.forumData{
-    height: 100vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-
-    .forumLatest{
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .postFull{
-        width: 25rem;
-        height: 5rem;
-        background-color: white;
-        padding: 15px;
-        display: flex;
-        border-radius: 1rem;
-        flex-direction: column;
-        margin: 0.5rem;
-        text-decoration: none;
-
-        .threadTitle{
-            margin: 0.5rem 5%;
-        }
-    }
-}
-
-.chatHome{
-    background-color:#a8db83;
+.chatHome {
+    background-color: #a8db83;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    .container{
-        background-color: #6b8d53;
-        //border: 1px solid white;
+  
+    .container {
+      background-color: #6b8d53;
+      border-radius: 10px;
+      //width: 100%;
+      height: flex;
+      display: flex;
+      overflow: hidden;
+  
+      .threads {
+        flex: 3;
         border-radius: 10px;
-        width: 50%;
-        height: 90%;
+      }
+  
+      .postFull {
+        width: 60cap;
+        height: 4rem;
+        padding: 15px;
         display: flex;
-        overflow: hidden;
-
-        .threads{
-            flex: 3;
-            //border: 1px solid white;
-            border-radius: 10px;
+        flex-direction: column;
+        text-decoration: none;
+        border-bottom: 2px solid #a8db83;
+        position: relative;
+  
+        .threadTitle {
+            margin-top: 5px;
+            padding-right: 25px;
+            color: white;
+            text-align: left;
+            text-size-adjust: 10;
+            font-size: 25px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }          
+  
+        .threadTime {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin-top: 25px;
+          margin-right: 10px;
+          font-size: 15px;
+          color: #dfdfdf;
+          align-self: flex-end;
         }
+      }
+    }
 
-        .postFull{
-            width: max;
-            height: 5rem;
-            //background-color: white;
-            padding: 15px;
-            display: flex;
-            //border-radius: 1rem;
-            flex-direction: column;
-            //margin: 0.5rem;
-            text-decoration: none;
-            //border-top: 2px solid #a8db83;
-            border-bottom: 2px solid #a8db83;
-    
-            .threadTitle{
-                margin: 0.5rem 5%;
-                color: white;
-                text-align: left;
-                text-size-adjust: 10;
-            }
+    .modalOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+        .modalContent {
+          background: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
+      }
+}
+  
+.create-thread-form {
+    text-align: left;
+  
+    .form-group {
+      margin: 10px;
+  
+      .form-control {
+        width: 500px;
+        max-height: 400px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        resize: vertical;
+      }
+      .form-control2 {
+        width: 500px;
+        max-height: 400px;
+        min-height: 100px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        resize: vertical;
+      }
+    }
+  
+    .submit-button {
+      background-color: #6b8d53;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: background-color 0.3s ease; /* Add a smooth transition effect */
+
+    &:hover {
+      background-color: #5c7947; /* Slightly darker color when hovered */
+    }
+  
+      &:disabled {
+        background-color: #ddd;
+        color: #555;
+        cursor: not-allowed;
+      }
     }
 }
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  
+    .popup-content {
+        position: relative;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    
+    .close-button {
+        position: absolute;
+        top: 0px;
+        right: 5px;
+        font-size: 30px;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+}
+
