@@ -4,6 +4,7 @@ import { getStorage, ref } from "firebase/storage";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 
+//---FIREBASE CONFIG---
 const firebaseConfig = {
   apiKey: "AIzaSyCW7EhKHiCxb8kfaK4xNWxNlIiXZZimazg",
   authDomain: "wise-program-402223.firebaseapp.com",
@@ -15,9 +16,10 @@ const firebaseConfig = {
   measurementId: "G-LN8N58M6S0"
 };
 
-// Initialize Firebase
+//---EXPORTS DATABASE---
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const storage = getStorage(app);
-export const db = getFirestore(app);
+const db = getFirestore(app);
 export const analytics = getAnalytics(app);
+export { db };

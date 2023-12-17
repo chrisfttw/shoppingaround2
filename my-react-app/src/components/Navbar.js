@@ -1,32 +1,29 @@
-import React, { useContext, useState, useEffect } from "react"
-import { Link, useMatch, useResolvedPath } from "react-router-dom"
-import { auth } from "../googledatebase/config";
-import SignOutButton from "./pages/logout";
+import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import { auth } from "../googledatebase/config.js";
+import SignOutButton from "./pages/logout.js";
 
 
 const Navbar = ()=> {
     const [user, setUser] = useState(null);
+    const [activeLink, setActiveLink] = useState(null);
 
+    //---LOGIC FOR NAV BAR---
+    const handleLinkClick = (index) => {
+        setActiveLink(index);
+    };
+
+    //---CHECK FOR SIGNED IN USER---
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
-            console.log("current user:", user.displayName)
             setUser(user);
         });
 
         return () => unsubscribe();
     }, []);
+
+    //---NAV BAR---
     return (
-        // <nav className="nav">
-        //     <Link to="/" className="site-title">
-        //         ShoppingAround
-        //     </Link>
-        //     <ul>
-        //         <CustomLink to="/chat">Chat</CustomLink>
-        //         <CustomLink to="/lists">Lists</CustomLink>
-        //         <CustomLink to="/addastore">Add a Store</CustomLink>
-        //         <CustomLink to="/signin">Sign in</CustomLink>
-        //     </ul>
-        // </nav>
         <div className="nav">
             <div className="container">
                 <Link to="/" className="site-title">
@@ -34,36 +31,36 @@ const Navbar = ()=> {
                 </Link>
             </div>
             <div className="nav">
-                <Link className="link" to="/chat">
-                    <h6>Chat</h6>
+                <Link
+                    className={`link ${activeLink === 1 ? 'active' : ''}`}
+                    to="/chat"
+                    onClick={() => handleLinkClick(1)}
+                >
+                        chat
                 </Link>
-                <Link className="link" to="/lists">
-                    <h6>Lists</h6>
+                <Link
+                    className={`link ${activeLink === 2 ? 'active' : ''}`}
+                    to="/review"
+                    onClick={() => handleLinkClick(2)}
+                >
+                        reviews
                 </Link>
-                <Link className="link" to="/addastore">
-                    <h6>Add a Store</h6>
+                {user ? (
+                    <div className="userDisplaySignout">
+                        <p className="userDisplay">hello, {user.displayName}</p>
+                    <SignOutButton />
+                    </div>
+                ) : (
+                <Link
+                    className={`link ${activeLink === 3 ? 'active' : ''}`}
+                    to="/login"
+                    onClick={() => handleLinkClick(3)}
+                >
+                    login
                 </Link>
-            {user ? (
-                <div>
-                    {/* Render content for authenticated users */}
-                    <p>Welcome, {user.displayName}!</p>
-                <SignOutButton />
-                </div>
-            ) : (
-                <Link to="/login">Login</Link>
-            )}       
+                )}       
             </div>
         </div>
-    )
-}
-
-function CustomLink({ to, children, ...props}) {
-     const resolvedPath = useResolvedPath(to)
-     const isActive = useMatch({ path: resolvedPath.pathname, end: true })
-    return (
-        <li className={isActive ? "active" : ""}>
-            <Link to={to} {...props}>{children}</Link>
-        </li>
     )
 }
 

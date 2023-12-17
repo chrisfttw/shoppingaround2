@@ -1,7 +1,7 @@
-// CreateThreadPopup.js
-import React, { useState } from 'react';
-import CreateThread from './pages/createThread'; // Import your existing CreateThread component
+import React from 'react';
+import CreateThread from './pages/createThread.js';
 
+//---CREATE THREAD POPUP---
 const CreateThreadPopup = ({ onClose }) => {
   return (
     <div className="popup">

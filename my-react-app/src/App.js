@@ -1,23 +1,22 @@
 import React, { useContext, useState } from 'react';
-import './App.css';
 import "./styles.scss";
-import Navbar from './components/Navbar';
-import Chat from "./components/pages/chat";
-import Lists from "./components/pages/lists";
-import Logout from "./components/pages/logout";
-import Addastore from "./components/pages/addastore";
-import Signin from './components/pages/signin';
-import Home from './components/pages/home';
+import Navbar from './components/Navbar.js';
+import Home from './components/pages/home.js';
+import Chat from "./components/pages/chat.js";
+import ThreadContentPage from './components/ThreadContentPage.js';
+import Review from './components/pages/review.js';
+import ReviewContentPage from './components/ReviewContentPage.js';
+import Login from './components/pages/login.js';
+import Signin from './components/pages/signin.js';
+import Logout from "./components/pages/logout.js";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import LoginButton from './components/Loginbutton';
-import LogoutButton from './components/Logoutbutton';
-import Login from './components/pages/login';
-import { AuthContext } from './context/AuthContext';
+import { AuthContext } from './context/AuthContext.js';
 
 function App() {
 
   const {currentUser} = useContext(AuthContext);
   
+  //---APP---
   return (
     <>
       <Navbar />
@@ -25,10 +24,11 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/chat' element={<Chat />} />
-          <Route path='/addastore' element={<Addastore />} />
+          <Route path='/thread/:threadId' element={<ThreadContentPage />} />
+          <Route path='/review' element={<Review />} />
+          <Route path='/review/:markersId' element={<ReviewContentPage />} />
           <Route path='/signin' element={<Signin />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/lists' element={<Lists />} />
           <Route path='/logout' element={<Logout />} />
         </Routes>
       </div>

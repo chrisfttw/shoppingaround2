@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../googledatebase/config";
 import { getAuth, signOut } from "firebase/auth";
 
 
@@ -9,6 +8,7 @@ const Login = () => {
   const [err,setErr] = useState(false);
   const navigate = useNavigate();
   
+  //---LOGIN LOGIC---
   const handleSubmit = async (e)=> {
     e.preventDefault()
     const email = e.target[0].value;
@@ -23,13 +23,13 @@ const Login = () => {
     }
   }
 
+  //---GET AUTH---
   const auth = getAuth();
   signOut(auth).then(() => {
-  // Sign-out successful.
   }).catch((error) => {
-  // An error happened.
   });
 
+  //---LOGIN FORM---
   return (
     <div className="formContainer">
       <div className="formWrapper">

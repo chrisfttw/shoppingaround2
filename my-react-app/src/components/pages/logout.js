@@ -1,6 +1,7 @@
 import React from 'react';
-import { auth } from '../../googledatebase/config';
+import { auth } from '../../googledatebase/config.js';
 
+//---SIGN OUT LOGIC---
 const SignOutButton = () => {
   const handleSignOut = async () => {
     try {
@@ -11,8 +12,9 @@ const SignOutButton = () => {
     }
   };
 
+  //---SIGN OUT BUTTON---
   return (
-    <button onClick={handleSignOut}>
+    <button onClick={handleSignOut} className='signOutButton'>
       Sign Out
     </button>
   );

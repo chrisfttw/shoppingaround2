@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-// Import the necessary functions from Firebase
-import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
-import { auth, db } from "../../googledatebase/config";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth, db } from "../../googledatebase/config.js";
 import { doc, setDoc } from "firebase/firestore"; 
 import { useNavigate, Link } from "react-router-dom";
 
@@ -9,12 +8,14 @@ const Register = () => {
   const [err, setErr] = useState(false);
   const navigate = useNavigate();
   
+  //------
   const handleSubmit = async (e) => {
     e.preventDefault();
     const displayName = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
 
+    //---CALL TO DB TO CREATE ACCOUNT---
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
 
@@ -24,7 +25,6 @@ const Register = () => {
         email,
       });
 
-      // Update the user profile
       await updateProfile(res.user, {
         displayName,
       });
@@ -35,6 +35,7 @@ const Register = () => {
     }
   };
 
+  //---SIGNUP FORM---
   return (
     <div className="formContainer">
       <div className="formWrapper">

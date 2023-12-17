@@ -1,3 +1,118 @@
+//---*---
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Reem Kufi", sans-serif !important;
+}
+
+//---BODY---
+body {
+  margin: 5;
+}
+
+//---CONTAINER---
+.container {
+  /* margin: 1rem; */
+  text-align: center;
+}
+
+//---NAV BAR---
+.nav {
+  height: 80px;
+  background-color: #6b8d53;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+
+  .link {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+  
+    &:visited {
+      text-decoration: underline;
+    }
+    &:hover {
+      background-color: #688653;
+      text-decoration: underline;
+    }
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+    .userDisplaySignout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .userDisplay {
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: .25rem;
+      
+        &:visited {
+          text-decoration: underline;
+        }
+        &:hover {
+          background-color: #688653;
+          text-decoration: underline;
+        }
+        &:active {
+          text-decoration: underline;
+        }
+      }
+
+      .signOutButton {
+        height: 30px;
+        line-height: 0px;
+        background-color: #f06868;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 20px;
+        transition: background-color 0.3s ease;
+      
+        &:hover {
+          background-color: #5c7947;
+        }
+      
+        &:disabled {
+          background-color: #ddd;
+          color: #555;
+          cursor: not-allowed;
+        }
+    }
+  }  
+}
+
+//---SITE TITLE---
+.site-title {
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+}
+
+//---FORM CONTAINER---
 .formContainer{
     background-color: #a8db83;
     height: 100vh;
@@ -51,6 +166,7 @@
     }
 }
 
+//---CHAT SECTION---
 .chatHome {
     background-color: #a8db83;
     height: 100vh;
@@ -58,22 +174,25 @@
     align-items: center;
     justify-content: center;
   
-    .container {
+    .containerLeft {
       background-color: #6b8d53;
       border-radius: 10px;
-      //width: 100%;
-      height: flex;
-      display: flex;
-      overflow: hidden;
+      width: 100%;
+      //height: 100%;
+      overflow-y: auto;
+      margin-top: 20px;
+      margin-bottom: 150px;
   
       .threads {
-        flex: 3;
+        //flex: 3;
         border-radius: 10px;
       }
   
       .postFull {
-        width: 60cap;
-        height: 4rem;
+        position: relative;
+        max-width: 800px;
+        width: 800px;
+        height: 5.5rem;
         padding: 15px;
         display: flex;
         flex-direction: column;
@@ -100,10 +219,30 @@
           margin-top: 25px;
           margin-right: 10px;
           font-size: 15px;
-          color: #dfdfdf;
+          color: rgb(206, 206, 206);
           align-self: flex-end;
         }
+
+        .threadUser {
+          margin: 3px;
+          padding-right: 25px;
+          color: rgb(206, 206, 206);
+          text-align: left;
+          text-size-adjust: 10;
+          font-size: 15px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        } 
       }
+    }
+
+    .containerRight {
+      position: fixed;
+      top: 90%;
+      height: 100vh;
+      width: 15%;
+      overflow-y: auto;
     }
 
     .modalOverlay {
@@ -125,7 +264,30 @@
         }
       }
 }
+
+//---CREATE THREAD BUTTON---
+.createThreadButton {
+  background-color: #f06868;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #5c7947;
+  }
   
+  &:disabled {
+    background-color: #ddd;
+    color: #555;
+    cursor: not-allowed;
+  }
+}
+
+//---CREATE THREAD FORM---
 .create-thread-form {
     text-align: left;
   
@@ -154,7 +316,7 @@
     }
   
     .submit-button {
-      background-color: #6b8d53;
+      background-color: #f06868;
       color: white;
       padding: 10px 15px;
       border: none;
@@ -175,6 +337,7 @@
     }
 }
 
+//---POPUP---
 .popup {
     position: fixed;
     top: 0;
@@ -205,3 +368,555 @@
     }
 }
 
+//---THREAD CONTENT PAGE---
+.threadContentPage {
+  max-width: 800px;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h1 {
+    color: #6b8d53;
+    font-size: 24px;
+    font-weight: 500px;
+    margin-bottom: 5px;
+    text-align: left;
+    overflow-wrap: break-word;
+  }
+
+  .threadUser {
+    color: #6b8d53;
+    font-size: 18px;
+    font-weight: 500px;
+    margin-bottom: 20px;
+    text-align: left;
+    overflow-wrap: break-word;
+    margin-left: 3px;
+  }
+
+  p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    overflow-wrap: break-word;
+  }
+
+  .replyCard {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: left;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    overflow-wrap: break-word;
+    position: relative;
+
+    .replyUser {
+      color: #6b8d53;
+      font-size: 24px;
+      font-weight: 500px;
+      margin-bottom: 20px;
+      text-align: left;
+      overflow-wrap: break-word;
+    }
+
+    .replyTime {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: 10px;
+      margin-right: 10px;
+      font-size: 15px;
+      color: #a8db83;
+    }
+  }
+}
+
+//---REPLIES---
+.replies {
+  max-width: 800px;
+  margin-top: 20px;
+  // display: flex;
+  // flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  .replyCard {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: left;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    overflow-wrap: break-word;
+    position: relative;
+
+    .replyUser {
+      color: #6b8d53;
+      font-size: 18px;
+      font-weight: 500px;
+      margin-bottom: 20px;
+      text-align: left;
+      overflow-wrap: break-word;
+    }
+
+    .replyTime {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: 10px;
+      margin-right: 10px;
+      font-size: 15px;
+      color: #6b8d53;
+    }
+  }
+}
+
+//---ACTIVATE REPLY/REVIEW POPUP---
+.replyButtonForPopup {
+  background-color: #f06868;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+
+    &:hover {
+      background-color: #5c7947; /* Slightly darker color when hovered */
+    }
+  
+    &:disabled {
+      background-color: #ddd;
+      color: #555;
+      cursor: not-allowed;
+    }
+}
+
+//---REPLY/REVIEW POPUP---
+.replyPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .replyPopupContent {
+      position: relative;
+      background: white;
+      padding: 20px;
+      border-radius: 5px;
+  }
+  
+  .closeButton {
+      position: absolute;
+      top: 0px;
+      right: 5px;
+      font-size: 30px;
+      cursor: pointer;
+      background: none;
+      border: none;
+  }
+}
+
+//---REPLY/REVIEW POPUP---
+.replyForm {
+  text-align: left;
+
+  .formControl {
+    width: 500px;
+    max-height: 400px;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    margin: 10px;
+  }
+
+  .ratingSection {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  
+    label {
+      margin-right: 5px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  
+    input[type="radio"] {
+      display: block; /* Hide the default radio button */
+    }
+  }
+  
+  
+
+  .replySubmitButton {
+    background-color: #6b8d53;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+
+    &:hover {
+      background-color: #5c7947; /* Slightly darker color when hovered */
+    }
+  
+    &:disabled {
+      background-color: #ddd;
+      color: #555;
+      cursor: not-allowed;
+    }
+  }
+}
+
+//---HOME SECTION---
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f0f0f0;
+
+  .left-panel {
+    margin-top: 20px;
+    width: 30%;
+    background-color: #f0f0f0;
+    overflow-y: auto;
+
+    .searchFilters {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      margin-right: 16px;
+      margin-left: 16px;
+    }
+
+    .map-card {
+      text-decoration: none;
+      color: black;
+    
+      .place-card {
+        position: relative;
+        height: 120px;
+        width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 12px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    
+        h3 {
+          margin-bottom: 0;
+          text-align: left; // Align h3 to the left
+        }
+    
+        h4 {
+          margin-bottom: 4px;
+          font-size: 12px;
+          text-align: left; // Align h4 to the left
+        }
+    
+        p {
+          margin: 0;
+          font-size: 14px;
+          text-align: left; // Align p to the left
+        }
+    
+        &:hover {
+          background-color: #f9f9f9;
+        }
+    
+        .priceCard {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 12px;
+          padding: 5px;
+          color: #6b8d53;
+        }
+    
+        .styleCard {
+          font-size: 14px;
+          margin-top: 4px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-align: left; // Align .styleCard to the left
+        }
+      }
+    }
+    
+  }
+
+  .right-panel {
+    width: 70%;
+    height: 100vh; // 3/4 of the viewport width
+    overflow: hidden; // Hide content that overflows the max height
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Add a box shadow with a slight transparency
+  }
+
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    margin-left: 22px;
+
+    input, select {
+      margin-right: 10px;
+      width: 100%;
+      padding: 8px;
+      //margin-bottom: 8px;
+      box-sizing: border-box;
+      border-radius: 20px;
+      color: #929292;
+    }
+  }
+}
+
+//---MAP CONTAINER---
+.leaflet-container {
+  height: 100vh;
+}
+
+//---REVIEW STYLES---
+.reviewContainer {
+  display: flex;
+  height: 100vh;
+  background-color: #f0f0f0;
+
+  .reviewPanel {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #f0f0f0;
+    overflow-y: auto;
+
+    .reviewSearchFilters {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      margin-right: 16px;
+      margin-left: 16px;
+    }
+
+    .reviewCard {
+      position: relative;
+      height: 120px;
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 12px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+    
+      .markerImage {
+        max-width: 100px;   
+        max-height: 100px;  
+        //margin-right: 0px;
+        border-radius: 10px;
+      }
+    
+      .reviewCardContent {
+        flex: 1;
+        h3 {
+          margin-bottom: 0;
+        }
+    
+        h4 {
+          margin-bottom: 4px;
+          font-size: 12px;
+        }
+    
+        p {
+          margin: 0;
+          font-size: 14px;
+        }
+    
+        .reviewPriceCard {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 12px;
+          padding: 5px;
+          color: #6b8d53;
+        }
+    
+        .reviewStyleCard {
+          font-size: 14px;
+          margin-top: 4px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    
+      &:hover {
+        background-color: #f9f9f9;
+      }
+    }
+    
+    }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    margin-left: 22px;
+
+    input, select {
+      margin-right: 10px;
+      width: 100%;
+      padding: 8px;
+      //margin-bottom: 8px;
+      box-sizing: border-box;
+      border-radius: 20px;
+      color: #929292;
+    }
+  }
+}
+//---REVIEW STYLES---
+.reviewsPageContainer {
+  margin-bottom: 150px;
+
+  .reviewsStore {
+    max-width: 800px;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .storeImage {
+      margin: 20px;
+      max-height: 600px;
+      border-radius: 20px;
+    }
+
+    .storeTitle {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .storeAddress {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .storeWebsite {
+      font-size: 16px;
+      color: #6b8d53;
+      margin-bottom: 8px;
+    }
+
+    .averageRating {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .reviews {
+
+    .reviewCard {
+      max-width: 800px;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      margin-left: auto;
+      margin-right: auto;
+
+      .reviewUser {
+        color: #6b8d53;
+        font-size: 18px;
+        font-weight: 500px;
+        margin-bottom: 20px;
+        text-align: left;
+        overflow-wrap: break-word;
+      }
+
+      .reviewRating{
+        color: #6b8d53;
+        font-size: 18px;
+        font-weight: 500px;
+        margin-bottom: 20px;
+        text-align: left;
+        overflow-wrap: break-word;
+      }
+
+      .review {
+        margin: 20px;
+        border-radius: 15px;
+        text-align: left;
+        color: #555;
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: left;
+        overflow-wrap: break-word;
+        position: relative;
+      }
+    }
+  }
+
+  .makeReviewFixed {
+    position: fixed;
+    top: 90%;
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+  
+    .makeReviewButton {
+      background-color: #f06868;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: background-color 0.3s ease;
+    
+      &:hover {
+        background-color: #5c7947;
+      }
+      
+      &:disabled {
+        background-color: #ddd;
+        color: #555;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
