@@ -2,6 +2,7 @@
 <p>
 ShoppingAround is a user-friendly platform designed to facilitate entry into niche or specialized fashion, prioritizing accessibility for all. Additionally, the platform actively promotes and supports local and small-scale stores.
 </p>
+<p>Created with React.js using Firebase as my database along with Google OAUTH2 for user authentication. I used Leaflet for the interactive map.</p>
 <p>Created for my Fall 2023 Senior Design Class</p>
 <p>Time Period: September 2023 to December 2023</p>
 
